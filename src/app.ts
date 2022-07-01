@@ -17,7 +17,6 @@ const renderMap = function (coords: { lat: number; lng: number }) {
 
 navigator.geolocation.getCurrentPosition(
   (position) => {
-    console.log(position.coords);
     const { latitude, longitude } = position.coords;
     const coords = { lat: latitude, lng: longitude };
     renderMap(coords);
