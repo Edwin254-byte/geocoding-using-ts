@@ -40,7 +40,8 @@ async function searchAddressHandler(event: Event) {
     const coords = data.results[0].geometry.location;
     renderMap(coords);
   } catch (err) {
-    console.error(err);
+    alert("Something went wrong...try again later");
+    //console.error(err);
   }
 }
 formEl.addEventListener("submit", searchAddressHandler);
