@@ -1,9 +1,8 @@
 // Code goes here!
+import { GOOGLE_API_KEY } from "./api_key";
 const mapEl = document.getElementById("map")! as HTMLDivElement;
 const formEl = document.querySelector("form")! as HTMLFormElement;
 const addressEl = document.getElementById("address")! as HTMLInputElement;
-
-const GOOGLE_API_KEY = "AIzaSyBeI8ojeu3emZj7Cc-tPmc4NRdqgJHZvTw";
 
 const renderMap = function (coords: { lat: number; lng: number }) {
   const map = new google.maps.Map(mapEl, {
@@ -18,7 +17,6 @@ const renderMap = function (coords: { lat: number; lng: number }) {
 
 navigator.geolocation.getCurrentPosition(
   (position) => {
-    console.log(position.coords);
     const { latitude, longitude } = position.coords;
     const coords = { lat: latitude, lng: longitude };
     renderMap(coords);
